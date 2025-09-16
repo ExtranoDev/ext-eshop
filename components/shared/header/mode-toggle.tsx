@@ -30,7 +30,7 @@ const ModeToggle = () => {
       <DropdownMenuTrigger asChild>
         <Button
           variant="ghost"
-          className="focus-visible:ring-0 focus-visible:ring-offset-0"
+          className="focus-visible:ring-0 focus-visible:ring-offset-0 flex items-center"
         >
           {theme === "system" ? (
             <SunMoon />
@@ -39,6 +39,8 @@ const ModeToggle = () => {
           ) : (
             <SunIcon />
           )}
+          {/* Added text beside the dropdown */}
+          <span className="ml-3 inline md:hidden">Change Appearance</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
