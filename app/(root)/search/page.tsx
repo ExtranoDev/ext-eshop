@@ -69,7 +69,7 @@ const SearchPage = async (props: {
     page = "1",
   } = await props.searchParams;
 
-  const cart = convertToPlainObject((await getMyCart()) as Cart);
+  const cart = (await getMyCart()) as Cart;
   const getFilterUrl = (filter: Record<string, string>, value?: string) => {
     const plainSearchParams = Object.fromEntries(
       Object.entries({ q, category, price, sort, rating, page })

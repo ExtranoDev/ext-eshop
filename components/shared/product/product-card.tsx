@@ -76,7 +76,7 @@ const ProductCard = ({ product, cart }: { product: Product; cart: Cart }) => {
         </div>
       </CardContent>
       <CardFooter className="[.border-b]:pb-2">
-        <div className="text-[8px] font-light text-gray-600 italic bg-gray-100 rounded-md px-2 py-1">
+        <div className="text-[10px] md:text-[8px] font-light text-gray-600 italic bg-gray-100 rounded-md px-2 py-1">
           {product.brand}
         </div>
       </CardFooter>
