@@ -22,6 +22,9 @@ import {
 import { Filter } from "lucide-react";
 import Pagination from "@/components/shared/pagination";
 import { SortSelect } from "@/components/shared/sort-select";
+import { getMyCart } from "@/lib/actions/cart.actions";
+import { Cart } from "@/types";
+import { convertToPlainObject } from "@/lib/utils";
 
 const prices = [
   { name: "$1 to $50", value: "1-50" },
@@ -66,6 +69,7 @@ const SearchPage = async (props: {
     page = "1",
   } = await props.searchParams;
 
+  const cart = convertToPlainObject((await getMyCart()) as Cart);
   const getFilterUrl = (filter: Record<string, string>, value?: string) => {
     const plainSearchParams = Object.fromEntries(
       Object.entries({ q, category, price, sort, rating, page })
@@ -264,9 +268,9 @@ const SearchPage = async (props: {
         {products.data.length === 0 ? (
           <div className="text-center text-lg">No products found.</div>
         ) : (
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4">
             {products.data.map((product) => (
-              <ProductCard key={product.id} product={product} />
+              <ProductCard key={product.id} product={product} cart={cart} />
             ))}
           </div>
         )}

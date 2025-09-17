@@ -55,7 +55,7 @@ const AddToCart = ({ cart, item }: { cart?: Cart; item: CartItem }) => {
     cart && cart.items.find((x) => x.productId === item.productId);
 
   return existItem ? (
-    <div>
+    <div className="w-full flex justify-between items-center px-5">
       <Button type="button" variant="outline" onClick={handleRemoveFromCart}>
         {isPending ? (
           <Loader className="w-4 h-4 animate-spin" />
@@ -73,7 +73,11 @@ const AddToCart = ({ cart, item }: { cart?: Cart; item: CartItem }) => {
       </Button>
     </div>
   ) : (
-    <Button className="w-full" type="button" onClick={handleAddToCart}>
+    <Button
+      className="w-full rounded-full bg-pink-600 py-2 text-white transition-all duration-300 ease-in-out hover:bg-pink-700 hover:shadow-md"
+      type="button"
+      onClick={handleAddToCart}
+    >
       {isPending ? (
         <Loader className="w-4 h-4 animate-spin" />
       ) : (
