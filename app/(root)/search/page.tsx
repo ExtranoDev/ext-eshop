@@ -24,7 +24,6 @@ import Pagination from "@/components/shared/pagination";
 import { SortSelect } from "@/components/shared/sort-select";
 import { getMyCart } from "@/lib/actions/cart.actions";
 import { Cart } from "@/types";
-import { convertToPlainObject } from "@/lib/utils";
 
 const prices = [
   { name: "$1 to $50", value: "1-50" },
