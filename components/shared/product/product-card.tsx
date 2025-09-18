@@ -27,10 +27,10 @@ const ProductCard = ({ product, cart }: { product: Product; cart: Cart }) => {
           />
         </CardHeader>
       </Link>
-      <CardContent className="grid gap-2">
+      <CardContent className="grid gap-2 ">
         <div>
           <Link href={`/product/${product.slug}`}>
-            <h2 className="text-sm font-semibold tracking-wide text-gray-900 transition-colors duration-200 hover:text-pink-600">
+            <h2 className="text-xs md:text-md font-semibold tracking-wide text-gray-900 transition-colors duration-200 hover:text-pink-600">
               {product.name}
             </h2>
           </Link>
@@ -42,16 +42,14 @@ const ProductCard = ({ product, cart }: { product: Product; cart: Cart }) => {
               ({product.numReviews || 0})
             </span>
           </div>
-          {product.stock > 0 ? (
+          {product.stock > 0 && (
             <ProductPrice
               value={Number(product.price)}
               className="font-bold text-gray-900 text-base"
             />
-          ) : (
-            <p className="text-xs font-medium text-destructive">Out of Stock</p>
           )}
         </div>
-        <div className="mt-4">
+        <div>
           {product.stock > 0 ? (
             <AddToCart
               cart={cart}
@@ -66,7 +64,7 @@ const ProductCard = ({ product, cart }: { product: Product; cart: Cart }) => {
             />
           ) : (
             <Button
-              className="w-full rounded-full py-2 text-gray-500 cursor-not-allowed border-gray-300"
+              className="w-full rounded-full py-2 text-gray-500 cursor-not-allowed border-gray-300 mt-2"
               variant="outline"
               disabled
             >

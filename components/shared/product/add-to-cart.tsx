@@ -55,26 +55,26 @@ const AddToCart = ({ cart, item }: { cart?: Cart; item: CartItem }) => {
     cart && cart.items.find((x) => x.productId === item.productId);
 
   return existItem ? (
-    <div className="w-full flex justify-between items-center px-5">
+    <div className="w-full flex items-center justify-between px-2 md:px-5">
       <Button type="button" variant="outline" onClick={handleRemoveFromCart}>
         {isPending ? (
-          <Loader className="w-4 h-4 animate-spin" />
+          <Loader className="h-2 w-2 md:h-4 md:w-4 animate-spin" />
         ) : (
-          <Minus className="h-4 w-4" />
+          <Minus className="h-2 w-2 md:h-4 md:w-4" />
         )}
       </Button>
       <span className="px-2">{existItem.qty}</span>
       <Button type="button" variant="outline" onClick={handleAddToCart}>
         {isPending ? (
-          <Loader className="w-4 h-4 animate-spin" />
+          <Loader className="h-2 w-2 md:h-4 md:w-4 animate-spin" />
         ) : (
-          <Plus className="h-4 w-4" />
+          <Plus className="h-2 w-2 md:h-4 md:w-4" />
         )}
       </Button>
     </div>
   ) : (
     <Button
-      className="w-full rounded-full bg-pink-600 py-2 text-white transition-all duration-300 ease-in-out hover:bg-pink-700 hover:shadow-md"
+      className="w-full rounded-full bg-pink-600 py-1 md:py-2 text-white transition-all duration-300 ease-in-out hover:bg-pink-700 hover:shadow-md"
       type="button"
       onClick={handleAddToCart}
     >

@@ -21,6 +21,11 @@ const Homepage = async () => {
       {featuredProduct.length > 0 && <ProductCarousel data={featuredProduct} />}
       <ProductList data={latestProducts} cart={cart} title="Newest Arrival" />
       <ViewAllProductsButton />
+      <ProductList
+        data={latestProducts}
+        cart={cart}
+        title="Featured Products"
+      />
       <DealCountdown />
       <IconBox />
     </>

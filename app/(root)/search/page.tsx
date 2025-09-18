@@ -267,7 +267,7 @@ const SearchPage = async (props: {
         {products.data.length === 0 ? (
           <div className="text-center text-lg">No products found.</div>
         ) : (
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4">
+          <div className="grid grid-cols-2 xs:grid-cols-1 sm:grid-cols-3 gap-4 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-6 px-6 md:px-0 lg:px-0">
             {products.data.map((product) => (
               <ProductCard key={product.id} product={product} cart={cart} />
             ))}

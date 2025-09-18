@@ -4,13 +4,13 @@ import Link from "next/link";
 import Menu from "@/components/shared/header/menu";
 import CategoryDrawer from "./category-drawer";
 import Search from "./search";
-import { ShoppingCartIcon } from "lucide-react";
+import { Home } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Header = () => {
   return (
     <header className="w-full border-b">
-      <div className="wrapper flex-between">
+      <div className="px-4 py-2 md:py-4 flex-between">
         <div className="flex-start">
           <CategoryDrawer />
           <Link href="/" className="flex-start ml-4">
@@ -28,12 +28,12 @@ const Header = () => {
             </span>
           </Link>
 
-          <Button asChild variant="outline">
+          <Button size="sm" asChild variant="outline">
             <Link
               href="/search"
               className="flex-start ml-6 text-muted-foreground"
             >
-              <ShoppingCartIcon className="w-4 h-4" />
+              <Home className="w-4 h-4" />
 
               <span className="font-medium text-sm">Shop</span>
             </Link>
